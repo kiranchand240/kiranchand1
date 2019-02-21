@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script 
+
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+
+"></script>
+<script>
+$(document).ready(function(){
+$( "input[type=checkbox][value=one]" ).val("MO,VW");
+$( "input[type=checkbox][value=two],input[type=checkbox][value=three]" ).val("DA,RC");
+
+$( "input[type=checkbox][value=Billing],input[type=checkbox][value=Common]" ).val("DD,LT");
+
+$( "input[type=checkbox][value=Data],input[type=checkbox][value=ReportingSAPBW],input[type=checkbox][value=ReportingSAPBO]" ).val("HA,SC");
+$( "input[type=checkbox][value=T4]" ).val("FC,MP");
+$( "input[type=checkbox][value=ExceptionMgt]" ).val("RS,DM");
+
+
+$( "input[type=checkbox][value=DataEnquiryService],input[type=checkbox][value=AccountManangement]" ).val("PC,LW");
+
+$( "input[type=checkbox][value=ProjectManagement],input[type=checkbox][value=ApplicaionSupport],input[type=checkbox][value=BatchUser],input[type=checkbox][value=FireFighter],input[type=checkbox][value=Portal],input[type=checkbox][value=IDAM],input[type=checkbox][value=SAPPOAdmin],input[type=checkbox][value=SAPBODS],input[type=checkbox][value=OpenText],input[type=checkbox][value=Informatica],input[type=checkbox][value=SAPBASIS],input[type=checkbox][value=AMT]" ).val("RS,DM");
+ 
+
+$( "input[type=checkbox][value=ic]" ).val("Dan Donovan");
+$( "input[type=checkbox][value=ac]" ).val("Fiona Cottam");
+$( "input[type=checkbox][value=cds]" ).val("Dave Ackers");
+$( "input[type=checkbox][value=industryengagement],input[type=checkbox][value=stakeholdereng]" ).val("Mike Orlsler");
+
+$( "input[type=checkbox][value=isops],input[type=checkbox][value=appsupport]" ).val("Rob Smith");
+
+$( "input[type=checkbox][value=servicedev],input[type=checkbox][value=bicc]" ).val("Harfan Ahmed");
+
+
+
+
+
+  
+   
+var appText2="";
+var appText1="";
+var approvalTextArr1=[];
+var approvalTextArr2=[];
+var approvalArr1=[];
+var approvalArr2=[];
+
+
+    $("#pm,#pm,#pm,#pm").click(function(){
+    if($(this).is(":checked")) {
+	approvalArr1.push($(this).attr("value"));
+		if(approvalTextArr1.indexOf($(this).attr("value")) 
+
+=== -1) {
+			approvalTextArr1.push($(this).attr("value"));
+			appText1  = approvalTextArr1.join(",");
+		}
+    } else {
+	
+	if(approvalArr1.indexOf($(this).attr("value")) === 
+
+approvalArr1.lastIndexOf($(this).attr("value"))){
+		var checkIndex = approvalTextArr1.indexOf
+
+($(this).attr("value"));
+		approvalTextArr1.splice(checkIndex,1);
+		appText1  = approvalTextArr1.join();
+	}
+approvalArr1.splice(approvalArr1.indexOf($(this).attr("value")),1);
+    } 
+	
+	if(approvalTextArr2.length>0){
+		$("#approver2").val(appText1);
+	} else {
+		$("#approver1").val(appText1);
+	}
+    });
+
+    $("#as,#as,#as,#as,#as,#as").click(function(){
+     if($(this).is(":checked")) {
+	approvalArr2.push($(this).attr("value"));
+		if(approvalTextArr2.indexOf($(this).attr("value")) 
+
+=== -1) {
+			approvalTextArr2.push($(this).attr("value"));
+			appText2  = approvalTextArr2.join(",");
+		}
+    } else {
+	
+	if(approvalArr2.indexOf($(this).attr("value")) === 
+
+approvalArr2.lastIndexOf($(this).attr("value"))){
+		var checkIndex = approvalTextArr2.indexOf
+
+($(this).attr("value"));
+		approvalTextArr2.splice(checkIndex,1);
+		appText2  = approvalTextArr2.join();
+	}
+approvalArr2.splice(approvalArr2.indexOf($(this).attr("value")),1);
+    } 
+   
+	if(approvalTextArr2.length>0) {
+		$("#approver1").val(appText2);
+		$("#approver2").val(appText1);
+	} else {
+		$("#approver1").val(appText1);
+		$("#approver2").val(appText2);
+	} 
+    });
+});
+</script>
+</head>
+<body>
+<div>
+  <input type="checkbox" name="pm" id="pm" value="one" >Stake Holder 
+
+Management<br>
+  <input type="checkbox" name="pm" id="pm" value="two" >Supply Meter 
+
+Point<br>
+  <input type="checkbox" name="pm" id="pm" value="three" >Supply Point 
+
+Administrator<br>
+ <input type="checkbox" name="pm" id="pm" value="Billing" >Billing<br>
+ <input type="checkbox" name="pm" id="pm" value="Common" >Common<br>
+ <input type="checkbox" name="pm" id="pm" value="Data" >Data<br>
+ <input type="checkbox" name="pm" id="pm" value="T4" >T-4<br>
+ <input type="checkbox" name="pm" id="pm" value="ExceptionMgt" >Eception Mgt<br>
+ <input type="checkbox" name="pm" id="pm" value="ReportingSAPBW" >Reporting SAP BW<br>
+ <input type="checkbox" name="pm" id="pm" value="ReportingSAPBO" >Reporting SAP BO<br>
+ <input type="checkbox" name="pm" id="pm" value="DataEnquiryService" >Data Enquiry Services<br>
+ <input type="checkbox" name="pm" id="pm" value="AccountManangement" >Account Management<br>
+ <input type="checkbox" name="pm" id="pm" value="ProjectManagement" >Project Management<br>
+ <input type="checkbox" name="pm" id="pm" value="ApplicaionSupport" >Applicaion Support<br>
+ <input type="checkbox" name="pm" id="pm" value="BatchUser" >Batch User<br>
+ <input type="checkbox" name="pm" id="pm" value="FireFighter" >Fire Fighter<br>
+ <input type="checkbox" name="pm" id="pm" value="Portal" >Portal<br>
+ <input type="checkbox" name="pm" id="pm" value="IDAM" >IDAM<br>
+ <input type="checkbox" name="pm" id="pm" value="SAPPOAdmin" >SAP PO Admin<br>
+ <input type="checkbox" name="pm" id="pm" value="SAPBODS" >SAP BODS<br>
+ <input type="checkbox" name="pm" id="pm" value="OpenText" >OpenText<br>
+ <input type="checkbox" name="pm" id="pm" value="Informatica" >Informatica<br>
+ <input type="checkbox" name="pm" id="pm" value="SAPBASIS" >SAP BASIS<br>
+ <input type="checkbox" name="pm" id="pm" value="AMT" >AMT<br>
+</div>
+
+<div style="border-top:1px solid #000;margin-left:50%;margin-top:-300px;">
+<input type="checkbox" name="as" id="as" value="ic">IC&C<br>
+<input type="checkbox" name="as" id="as" value="ac">Analytical Services<br>
+<input type="checkbox" name="as" id="as" value="cds">CDS<br>
+<input type="checkbox" name="as" id="as" value="industryengagement">Industry Engagement<br>
+<input type="checkbox" name="as" id="as" value="stakeholdereng">Stakeholder Engagement<br>
+<input type="checkbox" name="as" id="as" value="isops">IS Operations<br>
+<input type="checkbox" name="as" id="as" value="appsupport">Apps Support<br>
+<input type="checkbox" name="as" id="as" value="servicedev">Service devlopement<br>
+<input type="checkbox" name="as" id="as" value="bicc">BICC<br>
+
+</div>
+
+<div style="position:absolute;bottom:20px;left:80px">
+
+<label  for="approver1"> Approver 1</label>
+<input type="text" style="width:100%" id="approver1" name="approver">
+
+<label for="approver2"> Approver 2</label>
+<input type="text" style="width:100%" id="approver2" name="approver">
+
+</div>
+
+</body>
+</html>
