@@ -14,7 +14,7 @@ public class B2Bjson {
 		
 		String fileName = "D:\\json\\json11.txt";
 	    FileReader fileReader = new FileReader(fileName);
-
+System.out.println();
 	    try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 	      String line;
 	      while((line = bufferedReader.readLine()) != null) {
